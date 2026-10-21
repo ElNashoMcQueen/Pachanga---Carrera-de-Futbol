@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi carrera futbolística</title>
+<style>
+:root{--bg:#eaf6ea;--fg:#14301a;--card:#fff;--accent:#e8b400;--bar:#2e9d4a;--muted:#4b6b52;--line:#cfe3d1;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1f13;--fg:#e6f4e8;--card:#16301c;--bar:#3fbf63;--muted:#9bbfa3;--line:#24442b}}
+:root[data-theme="dark"]{--bg:#0e1f13;--fg:#e6f4e8;--card:#16301c;--bar:#3fbf63;--muted:#9bbfa3;--line:#24442b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;display:flex;justify-content:center;padding:16px}
+main{width:100%;max-width:520px}
+h1{text-align:center;margin:4px 0 12px;font-size:1.5rem}
+h2{margin:0 0 10px;font-size:1.15rem}
+.card{background:var(--card);border-radius:14px;padding:14px;margin-bottom:12px}
+.hd{display:flex;align-items:center;gap:10px}
+.hd .t{flex:1;min-width:0}
+.ovr{background:var(--accent);color:#222;border-radius:12px;padding:6px 14px;font-size:1.8rem;font-weight:800;text-align:center;line-height:1}
+.ovr small{display:block;font-size:.6rem;font-weight:700}
+.bar{margin-top:8px;font-size:.85rem}
+.bar i{display:block;height:8px;border-radius:5px;background:var(--line);margin-top:3px;overflow:hidden}
+.bar i span{display:block;height:100%;background:var(--bar)}
+.btn{display:flex;align-items:center;gap:10px;width:100%;margin-top:8px;padding:11px 12px;font-size:1rem;border:none;border-radius:10px;background:var(--accent);color:#222;font-weight:700;cursor:pointer;text-align:left}
+.btn small{display:block;font-weight:500;font-size:.75rem;opacity:.8}
+.btn.alt{background:var(--line);color:var(--fg)}
+label{display:block;margin-top:10px;font-size:.85rem;color:var(--muted)}
+input,select{width:100%;padding:10px;margin-top:4px;font-size:1rem;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;margin:10px 0}
+.grid div{background:var(--bg);border-radius:10px;padding:8px 2px;font-size:.75rem;color:var(--muted)}
+.grid b{display:block;font-size:1.3rem;color:var(--fg)}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th,td{padding:5px 4px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap}
+td:nth-child(2),th:nth-child(2){text-align:left}
+.note{color:var(--muted);font-size:.85rem;margin:6px 0}
+.err{color:#d33;font-size:.85rem;min-height:1.2em}
+</style>
+</head>
+<body>
+<main>
+<h1>⚽ Mi carrera futbolística</h1>
+<div id="app"></div>
+</main>
+<script>
+var L=[
+['Premier League','Inglaterra','Manchester City,Arsenal,Liverpool,Aston Villa,Brighton','Championship','Leicester City,Leeds United,Southampton'],
+['LaLiga','España','Real Madrid,FC Barcelona,Atlético de Madrid,Real Sociedad,Villarreal','LaLiga 2','Racing de Santander,Elche,Real Oviedo'],
+['Serie A','Italia','Inter,Napoli,Juventus,Milan,Atalanta','Serie B','Palermo,Sampdoria,Parma'],
+['Bundesliga','Alemania','Bayern Múnich,Bayer Leverkusen,Borussia Dortmund,RB Leipzig,Eintracht Frankfurt','2. Bundesliga','Hamburgo,Schalke 04,Hertha Berlín'],
+['Ligue 1','Francia','Paris Saint-Germain,Marsella,Mónaco,Lille,Lyon','Ligue 2','Saint-Étienne,Metz,Girondins de Burdeos'],
+['Primeira Liga','Portugal','Benfica,Sporting CP,FC Porto,Braga,Vitória SC','Liga Portugal 2','Marítimo,Farense,Académico de Viseu'],
+['Eredivisie','Países Bajos','PSV,Ajax,Feyenoord,AZ Alkmaar,FC Twente','Eerste Divisie','Roda JC,ADO La Haya,Willem II'],
+['Brasileirão','Brasil','Flamengo,Palmeiras,Botafogo,São Paulo,Corinthians','Série B','Santos,Vila Nova,Sport Recife'],
+['Liga Profesional','Argentina','River Plate,Boca Juniors,Racing Club,Independiente,Estudiantes','Primera Nacional','Chacarita Juniors,Quilmes,Almirante Brown'],
+['Süper Lig','Turquía','Galatasaray,Fenerbahçe,Beşiktaş,Trabzonspor,Başakşehir','1. Lig','Bursaspor,Eyüpspor,Ankaragücü'],
+['Pro League','Bélgica','Club Brujas,Unión Saint-Gilloise,Anderlecht,Genk,Gante','Challenger Pro League','Beerschot,Lokeren,Patro Eisden'],
+['Liga MX','México','América,Cruz Azul,Tigres UANL,Monterrey,Guadalajara','Liga de Expansión MX','Atlante,Tapatío,Cimarrones de Sonora'],
+['Scottish Premiership','Escocia','Celtic,Rangers,Hearts,Aberdeen,Hibernian','Scottish Championship','Dundee,Partick Thistle,Ayr United'],
+['Saudi Pro League','Arabia Saudita','Al-Hilal,Al-Nassr,Al-Ittihad,Al-Ahli,Al-Shabab','Saudi First Division','Al-Orobah,Al-Kholood,Al-Jabalain'],
+['MLS','Estados Unidos','Inter Miami,LAFC,Seattle Sounders,Columbus Crew,FC Cincinnati','USL Championship','Louisville City,Phoenix Rising,Sacramento Republic'],
+['Russian Premier League','Rusia','Zenit,Krasnodar,Spartak Moscú,CSKA Moscú'],
+['Ukrainian Premier League','Ucrania','Shakhtar Donetsk,Dinamo Kiev,Zorya Lugansk,Kryvbas'],
+['Super League Grecia','Grecia','Olympiacos,Panathinaikos,AEK Atenas,PAOK'],
+['Swiss Super League','Suiza','Young Boys,Basilea,Servette,Lugano'],
+['Bundesliga Austria','Austria','Red Bull Salzburgo,Sturm Graz,Rapid Viena,LASK'],
+['Superliga Dinamarca','Dinamarca','FC Copenhague,Midtjylland,Brøndby,Aarhus'],
+['J1 League','Japón','Vissel Kobe,Yokohama F. Marinos,Kawasaki Frontale,Urawa Reds'],
+['Liga BetPlay','Colombia','Atlético Nacional,Millonarios,Junior,América de Cali'],
+['Primera División Chile','Chile','Colo-Colo,Universidad de Chile,Universidad Católica,Huachipato'],
+['Primera División Uruguay','Uruguay','Peñarol,Nacional,Defensor Sporting,Liverpool FC'],
+['HNL','Croacia','Dinamo Zagreb,Hajduk Split,Rijeka,Osijek'],
+['Fortuna Liga','Chequia','Slavia Praga,Sparta Praga,Viktoria Plzeň,Baník Ostrava'],
+['K League 1','Corea del Sur','Ulsan HD,Jeonbuk Hyundai,Pohang Steelers,FC Seoul'],
+['Eliteserien','Noruega','Bodø/Glimt,Brann,Rosenborg,Molde'],
+['Allsvenskan','Suecia','Malmö FF,Djurgården,AIK,Hammarby']];
+var ALL=[];
+L.forEach(function(l,li){
+  var a=l[2].split(',');
+  a.forEach(function(n,ci){ALL.push({n:n,lg:l[0],c:l[1],d:1,r:Math.round(84-li*.7-ci*3)})});
+  if(l[3]){var base=84-li*.7-(a.length-1)*3-8;l[4].split(',').forEach(function(n,j){ALL.push({n:n,lg:l[3],c:l[1],d:2,r:Math.round(base-j*2.5)})})}
+});
+var W={'Delantero':[.4,.4,.2],'Mediocampista':[.2,.5,.3],'Defensa':[.2,.2,.6],'Arquero':[.1,.3,.6]};
+var AN=['Ritmo','Técnica','Físico'];
+var s,app=document.getElementById('app'),$=function(i){return document.getElementById(i)};
+function R(a,b){return a+Math.floor(Math.random()*(b-a+1))}
+function cl(x){return Math.max(30,Math.min(99,Math.round(x)))}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function ovr(){var w=W[s.pos],a=s.a;return Math.round(a[0]*w[0]+a[1]*w[1]+a[2]*w[2])}
+function gl(){return s.pos=='Arquero'?'Vallas invictas':'Goles'}
+function slug(n){return n.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function crest(n,z){
+  var h=0,i,w=n.split(' '),t;
+  for(i=0;i<n.length;i++)h=(h*31+n.charCodeAt(i))%360;
+  t=(w.length>1?w[0][0]+w[w.length-1][0]:n.slice(0,2)).toUpperCase();
+  var v='<svg width="'+z+'" height="'+Math.round(z*1.1)+'" viewBox="0 0 40 44" aria-hidden="true"><path d="M3 3h34v19c0 11-9 17-17 20C12 39 3 33 3 22z" fill="hsl('+h+',65%,42%)" stroke="hsl('+((h+40)%360)+',70%,72%)" stroke-width="2.5"/><text x="20" y="27" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" font-family="system-ui,sans-serif">'+esc(t)+'</text></svg>';
+  return '<span style="position:relative;display:inline-block;flex:none;width:'+z+'px;height:'+Math.round(z*1.1)+'px">'+v+'<img src="escudos/'+slug(n)+'.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain" onload="this.previousElementSibling.style.display=\'none\'" onerror="if(this.src.slice(-4)==\'.png\'){this.src=this.src.slice(0,-4)+\'.svg\'}else{this.remove()}"></span>';
+}
+
+function setup(err){
+  var ctry=L.map(function(l){return l[1]}).sort(),pos=Object.keys(W),ages=[];
+  for(var a=16;a<=23;a++)ages.push(a);
+  var op=function(x){return '<option>'+x+'</option>'};
+  app.innerHTML='<div class="card"><h2>Crea a tu jugador</h2><p class="note">Empiezas en un club modesto de tu país y debes llegar a la élite de una de las 30 mejores ligas del mundo.</p>'+
+  '<label>Nombre<input id="nm" maxlength="20" placeholder="Tu nombre"></label>'+
+  '<div class="two"><label>Nacionalidad<select id="nt">'+ctry.map(op).join('')+'</select></label><label>Edad<select id="ag">'+ages.map(op).join('')+'</select></label></div>'+
+  '<div class="two"><label>Estatura (cm)<input id="ht" type="number" min="150" max="205" value="178"></label><label>Peso (kg)<input id="wt" type="number" min="45" max="110" value="72"></label></div>'+
+  '<label>Posición<select id="ps">'+pos.map(op).join('')+'</select></label><div class="err" id="er">'+(err||'')+'</div><button class="btn" id="go">Empezar carrera</button></div>';
+  $('go').onclick=begin;
+}
+
+function begin(){
+  var h=+$('ht').value,w=+$('wt').value,age=+$('ag').value;
+  if(!(h>=150&&h<=205))return setup('La estatura debe estar entre 150 y 205 cm.');
+  if(!(w>=45&&w<=110))return setup('El peso debe estar entre 45 y 110 kg.');
+  var ct=$('nt').value,base=46+(age-16)*1.5,bmi=w/Math.pow(h/100,2),dh=(h-178)/6;
+  var a=[base+R(0,8)-dh/2-(bmi>25?2:0),base+R(0,8),base+R(0,8)+dh-(bmi<19?2:0)];
+  var pool=ALL.filter(function(c){return c.c==ct}).sort(function(x,y){return x.r-y.r});
+  s={name:$('nm').value.trim()||'Jugador',pos:$('ps').value,nat:ct,h:h,w:w,age:age,club:pool[0],a:a.map(cl),tot:{ap:0,g:0,as:0,t:0},hist:[],peak:0};
+  s.peak=ovr();plan();
+}
+
+function head(){
+  var b=s.a.map(function(v,i){return '<div class="bar">'+AN[i]+' '+v+'<i><span style="width:'+v+'%"></span></i></div>'}).join('');
+  var c=s.club;
+  return '<div class="card"><div class="hd">'+crest(c.n,40)+'<div class="t"><b>'+esc(c.n)+'</b><br><span class="note">'+c.lg+' · '+c.c+'</span></div><div class="ovr">'+ovr()+'<small>MEDIA</small></div></div>'+
+  '<p class="note"><b>'+esc(s.name)+'</b> · '+s.pos+' · '+s.nat+' · '+s.age+' años · '+s.h+' cm · '+s.w+' kg</p>'+b+'</div>';
+}
+function histTable(){
+  if(!s.hist.length)return '';
+  var r=s.hist.map(function(h){return '<tr><td>'+h.age+'</td><td>'+esc(h.club)+'</td><td>'+h.ap+'</td><td>'+h.g+'</td><td>'+h.as+'</td><td>'+(h.t?'🏆':'')+'</td></tr>'}).join('');
+  return '<div class="card"><h2>Trayectoria</h2><div class="tw"><table><tr><th>Edad</th><th>Club</th><th>PJ</th><th>'+(s.pos=='Arquero'?'VI':'G')+'</th><th>A</th><th></th></tr>'+r+'</table></div></div>';
+}
+
+function plan(){
+  app.innerHTML=head()+'<div class="card"><h2>Temporada de '+s.age+' años: ¿en qué te enfocas?</h2>'+
+  '<button class="btn" data-k="0">⚡ Entrenar velocidad</button><button class="btn" data-k="1">🎯 Entrenar técnica</button><button class="btn" data-k="2">💪 Entrenar físico</button><button class="btn alt" data-k="3">😴 Descanso y prevención de lesiones</button></div>'+histTable();
+  [].forEach.call(app.querySelectorAll('[data-k]'),function(b){b.onclick=function(){train(+b.getAttribute('data-k'))}});
+}
+
+function train(k){
+  var g=s.age<=21?4:s.age<=25?3:s.age<=29?2:1,i;
+  for(i=0;i<3;i++){
+    if(k==3)s.a[i]+=1;else if(k==i)s.a[i]+=g+R(0,1);else s.a[i]+=Math.floor(g/2);
+    s.a[i]=cl(s.a[i]);
+  }
+  season(k==3);
+}
+
+function season(rest){
+  var c=s.club,o=ovr(),games=R(26,38);
+  var startP=Math.min(1,Math.max(s.age<=21?.3:.15,.55+(o-c.r)/30));
+  var inj=Math.random()<(rest?.05:.14);
+  var ap=Math.round(games*startP*(inj?.7:1));
+  var gr={'Delantero':.55,'Mediocampista':.18,'Defensa':.05,'Arquero':0}[s.pos];
+  var ar={'Delantero':.15,'Mediocampista':.3,'Defensa':.1,'Arquero':0}[s.pos];
+  var as=Math.round(ap*ar*(.35+o/100)*(.6+Math.random()*.8)),g;
+  if(s.pos=='Arquero')g=Math.round(ap*(.2+o/250)*(.6+Math.random()*.6));
+  else g=Math.round(ap*gr*(.35+o/100)*(.6+Math.random()*.8));
+  var p=Math.max(.01,Math.min(.6,(c.r-55)/100+(o-c.r)/250));
+  var t=ap>games*.4&&Math.random()<p;
+  var nota=Math.max(5,Math.min(9.8,6+(o-c.r)/20+Math.random()*1.2)).toFixed(1);
+  if(inj)s.a[2]=cl(s.a[2]-2);
+  s.hist.push({age:s.age,club:c.n,ap:ap,g:g,as:as,t:t});
+  s.tot.ap+=ap;s.tot.g+=g;s.tot.as+=as;if(t)s.tot.t++;
+  s.peak=Math.max(s.peak,ovr());
+  result({ap:ap,g:g,as:as,t:t,inj:inj,nota:nota,start:startP});
+}
+
+function result(r){
+  var o=ovr(),c=s.club,offers=[c];
+  var up=ALL.filter(function(x){return x.r>c.r+1&&x.r<=o+3}).sort(function(a,b){return b.r-a.r});
+  if(up.length){offers.push(up[0]);if(up.length>1)offers.push(up[R(1,Math.min(up.length-1,6))]);}
+  if(o<c.r-6){var dn=ALL.filter(function(x){return x.r<c.r-3&&x.r>=o-8});if(dn.length)offers.push(dn[R(0,dn.length-1)])}
+  offers=offers.filter(function(x,i){return offers.indexOf(x)==i});
+  var msg=r.start<.4?'Fuiste suplente casi todo el año. Tu club exige más nivel.':r.start>.85?'Fuiste titular indiscutible.':'Tuviste minutos importantes.';
+  if(r.inj)msg+=' Una lesión te dejó fuera varias semanas.';
+  if(r.t)msg+=' ¡Ganaste el título con tu equipo!';
+  var h='<div class="card"><h2>Resultado de la temporada</h2><div class="grid"><div><b>'+r.ap+'</b>Partidos</div><div><b>'+r.g+'</b>'+gl()+'</div><div><b>'+r.as+'</b>Asist.</div><div><b>'+r.nota+'</b>Nota</div></div><p class="note">'+msg+'</p></div>';
+  h+='<div class="card"><h2>Tu futuro</h2>'+offers.map(function(f,i){return '<button class="btn" data-o="'+i+'">'+crest(f.n,30)+'<span>'+(f===c?'Renovar en ':'Fichar por ')+esc(f.n)+(f.r>c.r?' ⬆️':f.r<c.r?' ⬇️':'')+'<small>'+f.lg+' · '+f.c+'</small></span></button>'}).join('');
+  if(s.age>=32)h+='<button class="btn alt" id="rt">🏁 Retirarme ahora</button>';
+  h+='</div>';
+  app.innerHTML=head()+h+histTable();
+  [].forEach.call(app.querySelectorAll('[data-o]'),function(b){b.onclick=function(){advance(offers[+b.getAttribute('data-o')])}});
+  if($('rt'))$('rt').onclick=end;
+}
+
+function advance(c){
+  s.club=c;s.age++;
+  if(s.age>29){s.a[0]=cl(s.a[0]-R(1,2));s.a[2]=cl(s.a[2]-R(1,3))}
+  if(s.age>32)s.a[1]=cl(s.a[1]-R(0,1));
+  if(s.age>=37)return end();
+  plan();
+}
+
+function end(){
+  var pk=s.peak,tt=s.tot.t;
+  var tit=pk>=88&&tt>=4?'👑 Leyenda del fútbol':pk>=80?'⭐ Ídolo de la afición':pk>=70?'✅ Profesional respetado':'🏘️ Jugador de barrio con corazón';
+  app.innerHTML='<div class="card"><h2>Te retiras a los '+s.age+' años</h2><p><b>'+esc(s.name)+'</b> ('+s.nat+'): '+tit+'</p><div class="grid"><div><b>'+s.tot.ap+'</b>Partidos</div><div><b>'+s.tot.g+'</b>'+gl()+'</div><div><b>'+s.tot.as+'</b>Asist.</div><div><b>'+tt+'</b>Títulos</div></div><p class="note">Mejor media de tu carrera: '+pk+'</p><button class="btn" id="re">Empezar otra carrera</button></div>'+histTable();
+  $('re').onclick=function(){setup()};
+}
+setup();
+</script>
+</body>
+</html>
