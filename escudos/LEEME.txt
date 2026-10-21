@@ -1,0 +1,260 @@
+ESCUDOS: coloca aquí las imágenes de cada club.
+
+- Formato: PNG (o SVG). Con fondo transparente se ven mejor.
+- El nombre del archivo debe ser exactamente el de la lista (en minúsculas, sin tildes).
+- Si falta un archivo, la página muestra un escudo generado con las iniciales del club.
+
+== Premier League (Inglaterra) ==
+manchester-city.png   <- Manchester City
+arsenal.png   <- Arsenal
+liverpool.png   <- Liverpool
+aston-villa.png   <- Aston Villa
+brighton.png   <- Brighton
+-- Championship --
+leicester-city.png   <- Leicester City
+leeds-united.png   <- Leeds United
+southampton.png   <- Southampton
+
+== LaLiga (España) ==
+real-madrid.png   <- Real Madrid
+fc-barcelona.png   <- FC Barcelona
+atletico-de-madrid.png   <- Atlético de Madrid
+real-sociedad.png   <- Real Sociedad
+villarreal.png   <- Villarreal
+-- LaLiga 2 --
+racing-de-santander.png   <- Racing de Santander
+elche.png   <- Elche
+real-oviedo.png   <- Real Oviedo
+
+== Serie A (Italia) ==
+inter.png   <- Inter
+napoli.png   <- Napoli
+juventus.png   <- Juventus
+milan.png   <- Milan
+atalanta.png   <- Atalanta
+-- Serie B --
+palermo.png   <- Palermo
+sampdoria.png   <- Sampdoria
+parma.png   <- Parma
+
+== Bundesliga (Alemania) ==
+bayern-munich.png   <- Bayern Múnich
+bayer-leverkusen.png   <- Bayer Leverkusen
+borussia-dortmund.png   <- Borussia Dortmund
+rb-leipzig.png   <- RB Leipzig
+eintracht-frankfurt.png   <- Eintracht Frankfurt
+-- 2. Bundesliga --
+hamburgo.png   <- Hamburgo
+schalke-04.png   <- Schalke 04
+hertha-berlin.png   <- Hertha Berlín
+
+== Ligue 1 (Francia) ==
+paris-saint-germain.png   <- Paris Saint-Germain
+marsella.png   <- Marsella
+monaco.png   <- Mónaco
+lille.png   <- Lille
+lyon.png   <- Lyon
+-- Ligue 2 --
+saint-etienne.png   <- Saint-Étienne
+metz.png   <- Metz
+girondins-de-burdeos.png   <- Girondins de Burdeos
+
+== Primeira Liga (Portugal) ==
+benfica.png   <- Benfica
+sporting-cp.png   <- Sporting CP
+fc-porto.png   <- FC Porto
+braga.png   <- Braga
+vitoria-sc.png   <- Vitória SC
+-- Liga Portugal 2 --
+maritimo.png   <- Marítimo
+farense.png   <- Farense
+academico-de-viseu.png   <- Académico de Viseu
+
+== Eredivisie (Países Bajos) ==
+psv.png   <- PSV
+ajax.png   <- Ajax
+feyenoord.png   <- Feyenoord
+az-alkmaar.png   <- AZ Alkmaar
+fc-twente.png   <- FC Twente
+-- Eerste Divisie --
+roda-jc.png   <- Roda JC
+ado-la-haya.png   <- ADO La Haya
+willem-ii.png   <- Willem II
+
+== Brasileirão (Brasil) ==
+flamengo.png   <- Flamengo
+palmeiras.png   <- Palmeiras
+botafogo.png   <- Botafogo
+sao-paulo.png   <- São Paulo
+corinthians.png   <- Corinthians
+-- Série B --
+santos.png   <- Santos
+vila-nova.png   <- Vila Nova
+sport-recife.png   <- Sport Recife
+
+== Liga Profesional (Argentina) ==
+river-plate.png   <- River Plate
+boca-juniors.png   <- Boca Juniors
+racing-club.png   <- Racing Club
+independiente.png   <- Independiente
+estudiantes.png   <- Estudiantes
+-- Primera Nacional --
+chacarita-juniors.png   <- Chacarita Juniors
+quilmes.png   <- Quilmes
+almirante-brown.png   <- Almirante Brown
+
+== Süper Lig (Turquía) ==
+galatasaray.png   <- Galatasaray
+fenerbahce.png   <- Fenerbahçe
+besiktas.png   <- Beşiktaş
+trabzonspor.png   <- Trabzonspor
+basaksehir.png   <- Başakşehir
+-- 1. Lig --
+bursaspor.png   <- Bursaspor
+eyupspor.png   <- Eyüpspor
+ankaragucu.png   <- Ankaragücü
+
+== Pro League (Bélgica) ==
+club-brujas.png   <- Club Brujas
+union-saint-gilloise.png   <- Unión Saint-Gilloise
+anderlecht.png   <- Anderlecht
+genk.png   <- Genk
+gante.png   <- Gante
+-- Challenger Pro League --
+beerschot.png   <- Beerschot
+lokeren.png   <- Lokeren
+patro-eisden.png   <- Patro Eisden
+
+== Liga MX (México) ==
+america.png   <- América
+cruz-azul.png   <- Cruz Azul
+tigres-uanl.png   <- Tigres UANL
+monterrey.png   <- Monterrey
+guadalajara.png   <- Guadalajara
+-- Liga de Expansión MX --
+atlante.png   <- Atlante
+tapatio.png   <- Tapatío
+cimarrones-de-sonora.png   <- Cimarrones de Sonora
+
+== Scottish Premiership (Escocia) ==
+celtic.png   <- Celtic
+rangers.png   <- Rangers
+hearts.png   <- Hearts
+aberdeen.png   <- Aberdeen
+hibernian.png   <- Hibernian
+-- Scottish Championship --
+dundee.png   <- Dundee
+partick-thistle.png   <- Partick Thistle
+ayr-united.png   <- Ayr United
+
+== Saudi Pro League (Arabia Saudita) ==
+al-hilal.png   <- Al-Hilal
+al-nassr.png   <- Al-Nassr
+al-ittihad.png   <- Al-Ittihad
+al-ahli.png   <- Al-Ahli
+al-shabab.png   <- Al-Shabab
+-- Saudi First Division --
+al-orobah.png   <- Al-Orobah
+al-kholood.png   <- Al-Kholood
+al-jabalain.png   <- Al-Jabalain
+
+== MLS (Estados Unidos) ==
+inter-miami.png   <- Inter Miami
+lafc.png   <- LAFC
+seattle-sounders.png   <- Seattle Sounders
+columbus-crew.png   <- Columbus Crew
+fc-cincinnati.png   <- FC Cincinnati
+-- USL Championship --
+louisville-city.png   <- Louisville City
+phoenix-rising.png   <- Phoenix Rising
+sacramento-republic.png   <- Sacramento Republic
+
+== Russian Premier League (Rusia) ==
+zenit.png   <- Zenit
+krasnodar.png   <- Krasnodar
+spartak-moscu.png   <- Spartak Moscú
+cska-moscu.png   <- CSKA Moscú
+
+== Ukrainian Premier League (Ucrania) ==
+shakhtar-donetsk.png   <- Shakhtar Donetsk
+dinamo-kiev.png   <- Dinamo Kiev
+zorya-lugansk.png   <- Zorya Lugansk
+kryvbas.png   <- Kryvbas
+
+== Super League Grecia (Grecia) ==
+olympiacos.png   <- Olympiacos
+panathinaikos.png   <- Panathinaikos
+aek-atenas.png   <- AEK Atenas
+paok.png   <- PAOK
+
+== Swiss Super League (Suiza) ==
+young-boys.png   <- Young Boys
+basilea.png   <- Basilea
+servette.png   <- Servette
+lugano.png   <- Lugano
+
+== Bundesliga Austria (Austria) ==
+red-bull-salzburgo.png   <- Red Bull Salzburgo
+sturm-graz.png   <- Sturm Graz
+rapid-viena.png   <- Rapid Viena
+lask.png   <- LASK
+
+== Superliga Dinamarca (Dinamarca) ==
+fc-copenhague.png   <- FC Copenhague
+midtjylland.png   <- Midtjylland
+br-ndby.png   <- Brøndby
+aarhus.png   <- Aarhus
+
+== J1 League (Japón) ==
+vissel-kobe.png   <- Vissel Kobe
+yokohama-f-marinos.png   <- Yokohama F. Marinos
+kawasaki-frontale.png   <- Kawasaki Frontale
+urawa-reds.png   <- Urawa Reds
+
+== Liga BetPlay (Colombia) ==
+atletico-nacional.png   <- Atlético Nacional
+millonarios.png   <- Millonarios
+junior.png   <- Junior
+america-de-cali.png   <- América de Cali
+
+== Primera División Chile (Chile) ==
+colo-colo.png   <- Colo-Colo
+universidad-de-chile.png   <- Universidad de Chile
+universidad-catolica.png   <- Universidad Católica
+huachipato.png   <- Huachipato
+
+== Primera División Uruguay (Uruguay) ==
+penarol.png   <- Peñarol
+nacional.png   <- Nacional
+defensor-sporting.png   <- Defensor Sporting
+liverpool-fc.png   <- Liverpool FC
+
+== HNL (Croacia) ==
+dinamo-zagreb.png   <- Dinamo Zagreb
+hajduk-split.png   <- Hajduk Split
+rijeka.png   <- Rijeka
+osijek.png   <- Osijek
+
+== Fortuna Liga (Chequia) ==
+slavia-praga.png   <- Slavia Praga
+sparta-praga.png   <- Sparta Praga
+viktoria-plzen.png   <- Viktoria Plzeň
+banik-ostrava.png   <- Baník Ostrava
+
+== K League 1 (Corea del Sur) ==
+ulsan-hd.png   <- Ulsan HD
+jeonbuk-hyundai.png   <- Jeonbuk Hyundai
+pohang-steelers.png   <- Pohang Steelers
+fc-seoul.png   <- FC Seoul
+
+== Eliteserien (Noruega) ==
+bod-glimt.png   <- Bodø/Glimt
+brann.png   <- Brann
+rosenborg.png   <- Rosenborg
+molde.png   <- Molde
+
+== Allsvenskan (Suecia) ==
+malmo-ff.png   <- Malmö FF
+djurgarden.png   <- Djurgården
+aik.png   <- AIK
+hammarby.png   <- Hammarby
